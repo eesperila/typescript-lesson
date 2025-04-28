@@ -1,17 +1,15 @@
-type NoS = number | string;
-
-function addOrCombine(data1: NoS, data2: NoS) {
-  let result: NoS;
-  if (typeof data1 === "number" && typeof data2 === "number") {
-    result = data1 + data2;
-  } else {
-    result = data1.toString() + data2.toString();
-  }
-  return result;
+function sum(num1: number, num2: number): number {
+  return num1 + num2;
 }
 
-const combineNumbers = addOrCombine(5, 7);
-console.log(combineNumbers);
+function getResult(num: number): string {
+  return `Result: ${num}`;
+}
 
-const combineStrings = addOrCombine("Enrico", "Esperila");
-console.log(combineStrings);
+let addOrGetResult: (num1: number, num2: number) => number;
+let getResultFunction: (num1: number) => string;
+
+addOrGetResult = sum;
+getResultFunction = getResult;
+
+console.log(addOrGetResult(3, 100));
