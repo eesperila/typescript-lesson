@@ -1,18 +1,14 @@
-var AccessTypes;
-(function (AccessTypes) {
-    AccessTypes[AccessTypes["ADMIN"] = 0] = "ADMIN";
-    AccessTypes[AccessTypes["MODERATOR"] = 1] = "MODERATOR";
-    AccessTypes[AccessTypes["USER"] = 2] = "USER";
-})(AccessTypes || (AccessTypes = {}));
-var student = {
-    name: "Juan",
-    age: 19,
-    gender: "M",
-    interests: ["Driving"],
-    access: [1, "test"],
-    sampleEnum: AccessTypes.ADMIN,
-};
-if (student.sampleEnum == AccessTypes.ADMIN) {
-    console.log("Student is admin.");
+function addOrCombine(data1, data2) {
+    var result;
+    if (typeof data1 === "number" && typeof data2 === "number") {
+        result = data1 + data2;
+    }
+    else {
+        result = data1.toString() + data2.toString();
+    }
+    return result;
 }
-console.table(student.interests);
+var combineNumbers = addOrCombine(5, 7);
+console.log(combineNumbers);
+var combineStrings = addOrCombine("Enrico", "Esperila");
+console.log(combineStrings);

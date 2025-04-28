@@ -1,29 +1,17 @@
-enum AccessTypes {
-  ADMIN,
-  MODERATOR,
-  USER,
+type NoS = number | string;
+
+function addOrCombine(data1: NoS, data2: NoS) {
+  let result: NoS;
+  if (typeof data1 === "number" && typeof data2 === "number") {
+    result = data1 + data2;
+  } else {
+    result = data1.toString() + data2.toString();
+  }
+  return result;
 }
 
-type Student = {
-  name: string;
-  age: number;
-  gender?: string;
-  interests?: string[];
-  access: [number, string];
-  sampleEnum: AccessTypes;
-};
+const combineNumbers = addOrCombine(5, 7);
+console.log(combineNumbers);
 
-const student: Student = {
-  name: "Juan",
-  age: 19,
-  gender: "M",
-  interests: ["Driving"],
-  access: [1, "test"],
-  sampleEnum: AccessTypes.ADMIN,
-};
-
-if (student.sampleEnum == AccessTypes.ADMIN) {
-  console.log("Student is admin.");
-}
-
-console.table(student.interests);
+const combineStrings = addOrCombine("Enrico", "Esperila");
+console.log(combineStrings);
