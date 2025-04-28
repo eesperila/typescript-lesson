@@ -1,11 +1,17 @@
-function sum(num1, num2) {
-    return num1 + num2;
+var userData;
+var trueData;
+userData = "now";
+userData = 5;
+if (typeof userData === "string")
+    trueData = userData;
+function generateErrorCode(description, errorCode) {
+    throw {
+        message: description,
+        code: errorCode,
+    };
 }
-function getResult(num) {
-    return "Result: ".concat(num);
+function infiniteLoop() {
+    while (true) { }
 }
-var addOrGetResult;
-var getResultFunction;
-addOrGetResult = sum;
-getResultFunction = getResult;
-console.log(addOrGetResult(3, 100));
+generateErrorCode("Error happened", 1009);
+infiniteLoop();
