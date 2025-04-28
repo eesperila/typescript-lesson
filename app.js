@@ -1,17 +1,13 @@
-var userData;
-var trueData;
-userData = "now";
-userData = 5;
-if (typeof userData === "string")
-    trueData = userData;
-function generateErrorCode(description, errorCode) {
-    throw {
-        message: description,
-        code: errorCode,
-    };
-}
-function infiniteLoop() {
-    while (true) { }
-}
-generateErrorCode("Error happened", 1009);
-infiniteLoop();
+var Vehicle = /** @class */ (function () {
+    function Vehicle(model) {
+        this.modelType = model;
+    }
+    return Vehicle;
+}());
+var model_type = {
+    type: "Car",
+    color: "Red",
+    event: function () { return console.log("trigger event"); },
+};
+var car = new Vehicle(model_type);
+console.log(car);
