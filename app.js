@@ -1,12 +1,18 @@
-function addFunction(num1, num2, showResult, message) {
-    var result = num1 + num2;
-    if (showResult)
-        console.log(message + result);
-    else
-        console.log("Can't show results.");
+var AccessTypes;
+(function (AccessTypes) {
+    AccessTypes[AccessTypes["ADMIN"] = 0] = "ADMIN";
+    AccessTypes[AccessTypes["MODERATOR"] = 1] = "MODERATOR";
+    AccessTypes[AccessTypes["USER"] = 2] = "USER";
+})(AccessTypes || (AccessTypes = {}));
+var student = {
+    name: "Juan",
+    age: 19,
+    gender: "M",
+    interests: ["Driving"],
+    access: [1, "test"],
+    sampleEnum: AccessTypes.ADMIN,
+};
+if (student.sampleEnum == AccessTypes.ADMIN) {
+    console.log("Student is admin.");
 }
-var number1 = 5;
-var number2 = 2.4;
-var showResult = true;
-var message = "Sum is : ";
-addFunction(number1, number2, showResult, message);
+console.table(student.interests);

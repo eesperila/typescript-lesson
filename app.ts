@@ -1,18 +1,29 @@
-function addFunction(
-  num1: number,
-  num2: number,
-  showResult: boolean,
-  message: string
-) {
-  const result = num1 + num2;
-
-  if (showResult) console.log(message + result);
-  else console.log("Can't show results.");
+enum AccessTypes {
+  ADMIN,
+  MODERATOR,
+  USER,
 }
 
-const number1 = 5;
-const number2 = 2.4;
-const showResult = true;
-const message = "Sum is : ";
+type Student = {
+  name: string;
+  age: number;
+  gender?: string;
+  interests?: string[];
+  access: [number, string];
+  sampleEnum: AccessTypes;
+};
 
-addFunction(number1, number2, showResult, message);
+const student: Student = {
+  name: "Juan",
+  age: 19,
+  gender: "M",
+  interests: ["Driving"],
+  access: [1, "test"],
+  sampleEnum: AccessTypes.ADMIN,
+};
+
+if (student.sampleEnum == AccessTypes.ADMIN) {
+  console.log("Student is admin.");
+}
+
+console.table(student.interests);
